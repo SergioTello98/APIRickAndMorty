@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="columns is-multiline">
-    <div class="column is-4 $card-content-padding" v-for="(personaje, p) in personajes " key="p">
+    <div class="column is-4" v-for="(personaje, p) in personajes " :key="p">
       <div class="card">
         <div class="card-image">
           <figure class="image is-4by3">
