@@ -1,10 +1,10 @@
 <template>
   <section>
-    <div class="columns is-multiline">
+    <div class="columns is-multiline is-desktop">
     <div class="column is-4" v-for="(personaje, p) in personajes " :key="p">
-      <div class="card" v-on:click="alerta" :data-name="personaje.name">
+      <div class="card mx-5" v-on:click="alerta" :data-name="personaje.name">
         <div class="card-image">
-          <figure class="image is-4by3">
+          <figure class="image is-4">
             <img :src="personaje.image">
           </figure>
         </div>
@@ -40,13 +40,14 @@ export default{
   },
   data: function(){
     return {
+      busqueda: '',
       personajes: []
     }
   },
   methods: {
     alerta: function(evt){
       alert(evt.currentTarget.dataset["name"])
-    }
+    },
   }
 }
 
