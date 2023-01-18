@@ -2,7 +2,7 @@
   <section>
     <div class="columns is-multiline">
     <div class="column is-4" v-for="(personaje, p) in personajes " :key="p">
-      <div class="card">
+      <div class="card" v-on:click="alerta" :data-name="personaje.name">
         <div class="card-image">
           <figure class="image is-4by3">
             <img :src="personaje.image">
@@ -41,6 +41,11 @@ export default{
   data: function(){
     return {
       personajes: []
+    }
+  },
+  methods: {
+    alerta: function(evt){
+      alert(evt.currentTarget.dataset["name"])
     }
   }
 }
